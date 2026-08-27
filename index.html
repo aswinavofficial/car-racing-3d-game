@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="theme-color" content="#ff2a00" />
+<meta name="description" content="Turbo Drift 3D - High-octane mobile racing PWA" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<title>Turbo Drift 3D</title>
+<link rel="icon" href="favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Rajdhani:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div id="app">
+  <canvas id="c"></canvas>
+
+  <div id="hud">
+    <div class="hud-top">
+      <div class="hud-pill"><span>LAP</span><b id="lap">1 / 3</b></div>
+      <div class="hud-pill"><span>TIME</span><b id="time">00:00.0</b></div>
+      <div class="hud-pill"><span>BEST</span><b id="best">--:--</b></div>
+    </div>
+    <div class="speedo">
+      <div class="speedo-ring"><span id="speed">0</span><small>KM/H</small></div>
+      <div id="gear">N</div>
+    </div>
+    <div class="pos" id="pos">POS 1/1</div>
+  </div>
+
+  <div id="controls">
+    <div class="left">
+      <button class="ctrl" id="leftBtn" aria-label="Left"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M15 18l-6-6 6-6"/></svg></button>
+      <button class="ctrl" id="rightBtn" aria-label="Right"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M9 18l6-6-6-6"/></svg></button>
+    </div>
+    <div class="right">
+      <button class="ctrl gas" id="gasBtn" aria-label="Gas"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 4l-1.5 3h3L12 4z M7 8v8h2V8H7z M15 8v8h2V8h-2z M9 10v6h6v-6H9z"/></svg>◉</button>
+      <button class="ctrl brake" id="brakeBtn" aria-label="Brake">▐▐</button>
+    </div>
+  </div>
+
+  <div id="overlay" class="overlay">
+    <div class="card">
+      <h1>TURBO <span>DRIFT</span> 3D</h1>
+      <p>Mobile-native • Offline PWA • 60 FPS</p>
+      <div class="stats" id="menuStats"></div>
+      <button id="playBtn" class="primary">▶ RACE NOW</button>
+      <div class="hint">
+        <span>🕹️ Drag / Tilt / Arrows / WASD</span>
+        <span>📲 Add to Home Screen to install</span>
+      </div>
+      <label class="toggle"><input type="checkbox" id="tiltToggle" /> Enable Tilt Steering (mobile)</label>
+    </div>
+  </div>
+
+  <div id="pauseBtn">⏸︎</div>
+  <div id="countdown"></div>
+  <div id="toast"></div>
+</div>
+<script type="module" src="/src/main.ts"></script>
+</body>
+</html>
