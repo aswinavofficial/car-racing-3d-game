@@ -28,4 +28,4 @@ Push to `main` → GitHub Actions builds and deploys to `gh-pages`.
 Vite `base` is set to `/car-racing-3d-game/` for Pages. For custom domain, set `base: '/'` in `vite.config.ts`.
 
 ### Tech
-Three.js, TypeScript, Vite, vite-plugin-pwa (Workbox)
+Three.js, TypeScript, Vite, vite-plugin-pwa (Workbox).
